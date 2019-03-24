@@ -20,3 +20,4 @@ D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoA
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.csproj.CopyComplete
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.dll
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.pdb
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\Newtonsoft.Json.dll

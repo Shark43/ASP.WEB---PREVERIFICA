@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using Newtonsoft.Json;
 
 namespace ClassLibraryAccessoAiDati {
     //PER FAR FUNZIONARE ORM CHE MAPPA I DATI NEL DB AL INTERNO
@@ -23,6 +24,7 @@ namespace ClassLibraryAccessoAiDati {
         //SPECIFICA CHE IL CAMPO SOTTOSTANTE NON ESISTE NEL DB
         [Write(false)]
         [Computed]
+        [JsonIgnore] //PER RIMUOVERE UN CAMPO DEL JSON
         public bool Changed { get; set; }
 
         public Studenti() {
