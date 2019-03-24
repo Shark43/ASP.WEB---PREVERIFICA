@@ -9,3 +9,14 @@ D:\Scuola\informatica\ASP\PerVerifica\ClassLibraryAccessoAiDati\bin\Debug\Dapper
 D:\Scuola\informatica\ASP\PerVerifica\ClassLibraryAccessoAiDati\bin\Debug\Dapper.xml
 D:\Scuola\informatica\ASP\PerVerifica\ClassLibraryAccessoAiDati\bin\Debug\Dapper.Contrib.xml
 D:\Scuola\informatica\ASP\PerVerifica\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.csproj.CopyComplete
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\ClassLibraryAccessoAiDati.dll
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\ClassLibraryAccessoAiDati.pdb
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\Dapper.Contrib.dll
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\Dapper.dll
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\Dapper.xml
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\bin\Debug\Dapper.Contrib.xml
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.csprojAssemblyReference.cache
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.csproj.CoreCompileInputs.cache
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.csproj.CopyComplete
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.dll
+D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\ClassLibraryAccessoAiDati\obj\Debug\ClassLibraryAccessoAiDati.pdb

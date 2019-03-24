@@ -36,7 +36,10 @@ namespace WebApplicationAPI.Controllers
 
         //DELETE api/studenti/ID_STUDENTE
         public IHttpActionResult deleteStudente(int id) {
-            return Json(DataList.deleteStudentis(id));
+            //return Json(content: DataList.deleteStudentis(id));
+            bool deleted = DataList.deleteStudentis(id);
+            //creao un oggetto result a cui gli passo il messaggi di successo o errore
+            return Json(content: new Result { Message = deleted ? $"eliminato {id} con successo" : "errore durante eliminazione", isError = !deleted, Status = deleted ? 200 : 500 });
         }
 
         //PER GESTIRE INSERIMENTO DI ARRAY DI STUDENTI
