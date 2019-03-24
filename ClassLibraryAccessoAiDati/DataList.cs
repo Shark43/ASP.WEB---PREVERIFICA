@@ -26,6 +26,7 @@ namespace ClassLibraryAccessoAiDati {
                     connection.Open();
                     //connection.GetAll<Nome classe> prende tutti i dati dal db della determinata classe e li mappa nel db restituendo una lista con tutti gli oggetti gia caricati
                     DataList.Studentis = new BindingList<Studenti>(connection.GetAll<Studenti>().ToList());
+                    //stampa nella console del debugger
                     System.Diagnostics.Debug.WriteLine("GET ALL FINISHED");
 
                     return true;

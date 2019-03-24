@@ -6,6 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassLibraryAccessoAiDati {
+    //PER FAR FUNZIONARE ORM CHE MAPPA I DATI NEL DB AL INTERNO
+    //DELLE CLASSI BISOGNA AGGIUNGERE DEI DECORATORI ALLA CLASSE
+
+    //IL DECORATORE TABLE SPECICA IL NOME DELLA TABELLA A CUI SI RIFERISCE LA CLASSE NEL DB
+    //es nome classe impiegati
+    // nome tabella su db dipendenti
+    //devo mettere Table("dipendenti") cosi lui capira che la classe impiegati si riferisce ai dipenti
+
     //NOME DELLA TABELLA SUL DB
     [Table("Students")]
     public class Studenti {
