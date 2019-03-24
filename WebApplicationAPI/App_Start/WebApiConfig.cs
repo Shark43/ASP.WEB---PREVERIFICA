@@ -15,6 +15,7 @@ namespace WebApplicationAPI
 
             // Route dell'API Web
             config.MapHttpAttributeRoutes();
+            //PER RISOLVERE IL PROBLEMA DEL CORS - SE SI LAVORA CON PIU PROGETTI NELLA STESSA SOLUZIOME
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
             config.Routes.MapHttpRoute(
