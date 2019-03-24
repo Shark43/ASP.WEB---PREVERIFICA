@@ -34,7 +34,7 @@ namespace WebApplicationAPI.Controllers
         //DELETE api/studenti/ID_STUDENTE
         public IHttpActionResult deleteStudente(int id) {
             //return Json(content: DataList.deleteStudentis(id));
-            bool deleted = DataList.deleteStudentis(id);
+            bool deleted = DataList.DeleteStudentis(id);
             //creao un oggetto result a cui gli passo il messaggi di successo o errore
             return Json(content: new Result { Message = deleted ? $"eliminato {id} con successo" : "errore durante eliminazione", isError = !deleted, Status = deleted ? 200 : 500 });
         }
@@ -48,7 +48,7 @@ namespace WebApplicationAPI.Controllers
         }
         //POST api/studenti - in post {Nome: nome, Cognome: cognome, Anni: anni}
         public IHttpActionResult insertStudente(Studenti studente) {
-            return Json(DataList.insertStudentis(studente));
+            return Json(DataList.InsertStudentis(studente));
         }
 
         //PER GESTIRE AGGIORNAMENTO DI ARRAY DI STUDENTI
