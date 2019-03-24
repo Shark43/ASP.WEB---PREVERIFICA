@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
@@ -22,21 +23,21 @@ namespace ClassLibraryAccessoAiDati {
             try {
                 using (SqlConnection connection = new SqlConnection(ConnectionString)) {
                     connection.Open();
-                    DataList.Studentis = new BindingList<Studenti>(connection.GetAll<Studenti>().ToList());
-                    System.Diagnostics.Debug.WriteLine("GET ALL FINISHED");
+                    Studentis = new BindingList<Studenti>(connection.GetAll<Studenti>().ToList());
+                    Debug.WriteLine("GET ALL FINISHED");
 
                     return true;
                 }
             }
             catch(Exception ex) {
-                System.Diagnostics.Debug.WriteLine(ex);
-                DataList.Studentis = new BindingList<Studenti>();
+                Debug.WriteLine(ex);
+                Studentis = new BindingList<Studenti>();
                 return false;
             }
         }
 
         //Funzione per ottenere una lista di studenti in base al nome, il parametro e caricato dinamicamente nella query
-        public static bool GetStudentiByName(string Name)
+        public static bool GetStudentiByName(string name)
         {
             try
             {
@@ -44,16 +45,16 @@ namespace ClassLibraryAccessoAiDati {
                 {
                     string sql = "SELECT * FROM studenti WHERE Name=@name1";
                     DynamicParameters parameters = new DynamicParameters();
-                    parameters.Add("name1",Name);
-                    DataList.Studentis = new BindingList<Studenti>(connection.Query<Studenti>(sql, parameters).ToList());
-                    System.Diagnostics.Debug.WriteLine("GET Student by Name FINISHED");
+                    parameters.Add("name1",name);
+                    Studentis = new BindingList<Studenti>(connection.Query<Studenti>(sql, parameters).ToList());
+                    Debug.WriteLine("GET Student by Name FINISHED");
                     return true;
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex);
-                DataList.Studentis = new BindingList<Studenti>();
+                Debug.WriteLine(ex);
+                Studentis = new BindingList<Studenti>();
                 return false;
             }
         }
@@ -61,9 +62,10 @@ namespace ClassLibraryAccessoAiDati {
         public static bool DeleteStudentis(int toDelete) {
             //ELIMINA ELEMENTO CON ID = toDelete
             //CERCA NELLA LISTA L'ELEMENTO CON ID = toDelete E LO ELIMINA
-            IEnumerable<Studenti> ie = DataList.Studentis.Where(s => s.ID == toDelete);
-            if(ie.Count() == 1) {
-                DataList.Studentis.Remove(ie.First());
+            IEnumerable<Studenti> ie = Studentis.Where(s => s.ID == toDelete);
+            var enumerable = ie as Studenti[] ?? ie.ToArray();
+            if(enumerable.Count() == 1) {
+                Studentis.Remove(enumerable.First());
             }
             using (SqlConnection connection = new SqlConnection(ConnectionString)) {
                 connection.Open();
@@ -86,11 +88,11 @@ namespace ClassLibraryAccessoAiDati {
                 return connection.Update(studentis);
             }
         }
-        public static Studenti GetStudenteFromDb(int studente_code) {
+        public static Studenti GetStudenteFromDb(int studenteCode) {
             //RESTITUISCE L'ELEMENTO CON UN DETERMINATO ID
             using (SqlConnection connection = new SqlConnection(ConnectionString)) {
                 connection.Open();
-                return connection.Get<Studenti>(studente_code);
+                return connection.Get<Studenti>(studenteCode);
             }
         }
         public static long InsertStudentis(List<Studenti> studenti) {
@@ -100,7 +102,7 @@ namespace ClassLibraryAccessoAiDati {
                 int ninserted = Convert.ToInt32(connection.Insert(studenti));
 
                 //AGGIORNAMENTO ASCINCRONO DELLA LISTA
-                new Task(() => { DataList.GetAllStudenti(); }).Start();
+                new Task(() => { GetAllStudenti(); }).Start();
                 return ninserted;
             }
         }
@@ -111,7 +113,7 @@ namespace ClassLibraryAccessoAiDati {
                 int id = Convert.ToInt32(connection.Insert(studenti));
                 //ASSEGNO ID AL ELEMENTO AGGIUNTO
                 studenti.ID = id;
-                DataList.Studentis.Add(studenti);
+                Studentis.Add(studenti);
                 return id;
             }
         }
