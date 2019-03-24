@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using ClassLibraryAccessoAiDati;
-
+using Dapper;
 namespace WebApplicationAPI.Controllers
 {
     //IMPOSTA IN MANIERA STATICA IL PATH PER ACCEDERE ALLA RISORSA
@@ -29,6 +29,15 @@ namespace WebApplicationAPI.Controllers
         //GET api/studenti/ID_STUDENTE
         public IHttpActionResult GetStudente(int id) {
             return Json(content: DataList.GetStudenteFromDb(id));
+        }
+
+        [HttpGet]
+        [Route("api/studenti/filterByCognome/{cognome}")]
+        public IHttpActionResult GetStudenteByCognome(string cognome) {
+            string sql = "SELECT * FROM Students WHERE CONVERT(VARCHAR, Cognome) = @cognome";
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("cognome", cognome);
+            return Json(content: DataList.ExecuteQueryStudenti(sql, parameters));
         }
 
         //DELETE api/studenti/ID_STUDENTE

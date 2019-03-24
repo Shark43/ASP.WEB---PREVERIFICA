@@ -132,7 +132,6 @@ D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bi
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\System.Web.Http.dll
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\System.Web.Http.WebHost.dll
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\Dapper.Contrib.dll
-D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\Dapper.dll
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\ClassLibraryAccessoAiDati.pdb
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\System.Net.Http.Formatting.xml
 D:\Scuola\informatica\ASP\PerVerifica\ASP.WEB---PREVERIFICA\WebApplicationAPI\bin\System.Web.Http.xml

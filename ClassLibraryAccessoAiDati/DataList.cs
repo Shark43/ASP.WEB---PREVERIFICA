@@ -41,7 +41,7 @@ namespace ClassLibraryAccessoAiDati {
         }
 
         //Funzione per ottenere una lista di studenti in base al nome, il parametro e caricato dinamicamente nella query
-        public static bool GetStudentiByName(string name)
+        public static BindingList<Studenti> GetStudentiByName(string name)
         {
             try
             {
@@ -50,16 +50,27 @@ namespace ClassLibraryAccessoAiDati {
                     string sql = "SELECT * FROM studenti WHERE Name=@name1";
                     DynamicParameters parameters = new DynamicParameters();
                     parameters.Add("name1",name);
-                    Studentis = new BindingList<Studenti>(connection.Query<Studenti>(sql, parameters).ToList());
                     Debug.WriteLine("GET Student by Name FINISHED");
-                    return true;
+                    return new BindingList<Studenti>(connection.Query<Studenti>(sql, parameters).ToList());                    
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                Studentis = new BindingList<Studenti>();
-                return false;
+                return new BindingList<Studenti>();
+            }
+        }
+
+        public static BindingList<Studenti> ExecuteQueryStudenti(string sql, DynamicParameters parameters) {
+            try {
+                using (SqlConnection connection = new SqlConnection(ConnectionString)) {
+                    Debug.WriteLine("GET Student by Name FINISHED");
+                    return new BindingList<Studenti>(connection.Query<Studenti>(sql, parameters).ToList());
+                }
+            }
+            catch (Exception ex) {
+                Debug.WriteLine(ex);
+                return new BindingList<Studenti>();
             }
         }
 

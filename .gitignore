@@ -15,3 +15,7 @@ ClassLibraryAccessoAiDati/obj/Debug/ClassLibraryAccessoAiDati.csproj.CoreCompile
 ClassLibraryAccessoAiDati/obj/Debug/ClassLibraryAccessoAiDati.csprojAssemblyReference.cache
 WebApplicationAPI/obj/Debug/build.force
 ClassLibraryAccessoAiDati/obj/Debug/ClassLibraryAccessoAiDati.csprojAssemblyReference.cache
+ClassLibraryAccessoAiDati/obj/Debug/*
+ClassLibraryAccessoAiDati/bin/Debug/*
+ClassLibraryAccessoAiDati/bin/Debug
+ClassLibraryAccessoAiDati/obj/Debug/*
