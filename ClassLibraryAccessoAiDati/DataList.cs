@@ -14,7 +14,9 @@ namespace ClassLibraryAccessoAiDati {
         public static BindingList<Studenti> Studentis { get; set; } = new BindingList<Studenti>();
         public static BindingList<Classe> Classes { get; set; } = new BindingList<Classe>();
 
+        //stringa di connessione per access
         //public static string connectionString { get; } = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.GetData("DataDirectory") + "\\per_verifica.accdb";
+        //stringa di connesione per sql server
         public static string connectionString { get; } = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + AppDomain.CurrentDomain.GetData("DataDirectory") + "\\test.mdf";
 
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Scuola\informatica\ASP\PerVerifica\WebApplicationAPI\App_Data\per_verifica.accdb
