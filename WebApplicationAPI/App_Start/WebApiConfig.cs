@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Formatting;
+﻿using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -16,6 +13,7 @@ namespace WebApplicationAPI
             // Route dell'API Web
             config.MapHttpAttributeRoutes();
             //PER RISOLVERE IL PROBLEMA DEL CORS - SE SI LAVORA CON PIU PROGETTI NELLA STESSA SOLUZIOME
+            //Vieni disabilitato il cors per problemi sul protocollo "file://" utilizzato da visualstudio
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
             config.Routes.MapHttpRoute(

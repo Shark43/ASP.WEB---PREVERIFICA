@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using ClassLibraryAccessoAiDati;
+
 namespace WebApplicationAPI.Controllers
 {
     //IMPOSTA IN MANIERA STATICA IL PATH PER ACCEDERE ALLA RISORSA
@@ -16,7 +13,7 @@ namespace WebApplicationAPI.Controllers
     {
         //GET api/studenti/
         public IHttpActionResult GetStudentis() {
-            DataList.getAllStudenti();
+            DataList.GetAllStudenti();
             return Json(content: DataList.Studentis);
         }
         //public List<Studenti> GetStudentis() {
@@ -31,7 +28,7 @@ namespace WebApplicationAPI.Controllers
 
         //GET api/studenti/ID_STUDENTE
         public IHttpActionResult GetStudente(int id) {
-            return Json(content: DataList.getStudenteFromDB(id));
+            return Json(content: DataList.GetStudenteFromDb(id));
         }
 
         //DELETE api/studenti/ID_STUDENTE
@@ -46,8 +43,8 @@ namespace WebApplicationAPI.Controllers
         //POST api/studenti/multiple - in post [{oggetto da inserire},{nome: nome, cognome:cognome, anni:anni}, ecc]
         [HttpPost]
         [Route("api/studenti/multiple")]
-        public IHttpActionResult insertStudenti(List<Studenti> studenti) {
-            return Json(DataList.insertStudentis(studenti));
+        public IHttpActionResult InsertStudenti(List<Studenti> studenti) {
+            return Json(DataList.InsertStudentis(studenti));
         }
         //POST api/studenti - in post {Nome: nome, Cognome: cognome, Anni: anni}
         public IHttpActionResult insertStudente(Studenti studente) {
@@ -58,13 +55,20 @@ namespace WebApplicationAPI.Controllers
         //PUT api/studenti/multiple [{},{}, ecc]
         [HttpPut]
         [Route("api/studenti/multiple")]
-        public IHttpActionResult updateStudenti(List<Studenti> studenti) {
-            return Json(DataList.updatesStudentis(studenti));
+        public IHttpActionResult UpdateStudenti(List<Studenti> studenti) {
+            return Json(DataList.UpdatesStudentis(studenti));
         }
         //PUT api/studenti in put {Nome: nome, Cognome: cognome, Anni: anni}
         [HttpPut]
-        public IHttpActionResult updateStudenti(Studenti studente) {
-            return Json(DataList.updatesStudentis(studente));
+        public IHttpActionResult UpdateStudenti(Studenti studente) {
+            return Json(DataList.UpdatesStudentis(studente));
+        }
+
+        //Ricerche avanzate con query custom con parametri dinamici No sql-Injectio guys :( 
+        [HttpGet]
+        public IHttpActionResult GetStudentiByName(string Name)
+        {
+            return Json(DataList.GetStudentiByName(Name));
         }
 
         //GET: API/STUDENTI/TEST
@@ -73,8 +77,5 @@ namespace WebApplicationAPI.Controllers
         //    DataList.getAllStudenti();
         //    return Json(content: DataList.Studentis);
         //}
-
-
-
     }
 }

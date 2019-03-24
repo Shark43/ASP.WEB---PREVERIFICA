@@ -2,4 +2,16 @@
 # Il file gitignore è stato creato automaticamente da Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/PerVerifica/v15
+/.vs/PerVerifica/v16/Server/sqlite3
+PerVerifica.sln
+.vs/config/applicationhost.config
+.vs/PerVerifica/v15/.suo
+.vs/PerVerifica/v15/Server/sqlite3/db.lock
+.vs/PerVerifica/v15/Server/sqlite3/storage.ide
+.vs/PerVerifica/v15/Server/sqlite3/storage.ide-shm
+.vs/PerVerifica/v15/Server/sqlite3/storage.ide-wal
+.vs/slnx.sqlite
+ClassLibraryAccessoAiDati/obj/Debug/ClassLibraryAccessoAiDati.csproj.CoreCompileInputs.cache
+ClassLibraryAccessoAiDati/obj/Debug/ClassLibraryAccessoAiDati.csprojAssemblyReference.cache
+WebApplicationAPI/obj/Debug/build.force
+ClassLibraryAccessoAiDati/obj/Debug/ClassLibraryAccessoAiDati.csprojAssemblyReference.cache
