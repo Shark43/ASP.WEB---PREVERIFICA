@@ -61,7 +61,7 @@ namespace ClassLibraryAccessoAiDati {
             }
         }
 
-        public static BindingList<Studenti> ExecuteQueryStudenti(string sql, DynamicParameters parameters) {
+        public static BindingList<Studenti> ExecuteQuery(string sql, DynamicParameters parameters) {
             try {
                 using (SqlConnection connection = new SqlConnection(ConnectionString)) {
                     Debug.WriteLine("GET Student by Name FINISHED");

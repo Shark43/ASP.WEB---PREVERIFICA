@@ -34,10 +34,11 @@ namespace WebApplicationAPI.Controllers
         [HttpGet]
         [Route("api/studenti/filterByCognome/{cognome}")]
         public IHttpActionResult GetStudenteByCognome(string cognome) {
+            //SQL NON SUPPORTA IL CONFRONTO DEI CAMPI DI TIPO TEXT QUINDI DEVI CONVERTIRE IL CAMPO IN VARCHAR
             string sql = "SELECT * FROM Students WHERE CONVERT(VARCHAR, Cognome) = @cognome";
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("cognome", cognome);
-            return Json(content: DataList.ExecuteQueryStudenti(sql, parameters));
+            return Json(content: DataList.ExecuteQuery(sql, parameters));
         }
 
         //DELETE api/studenti/ID_STUDENTE
